@@ -28,7 +28,7 @@ def get_brightness_hex(bright):
     return "".join(bins_str)
 
 def write_data(data, addr):
-    gatt.sendline(f"connect {addr}")
+    gatt.sendline("connect {addr}")
     try:
         gatt.expect("Connection successful", timeout=5)
     except pexpect.exceptions.TIMEOUT:
